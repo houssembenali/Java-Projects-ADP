@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<context:property-placeholder location="jdbc.properties"/>
+
+	<bean id="hikariDS" class="com.zaxxer.hikari.HikariDataSource">
+		<property name="jdbcUrl"
+			value="${spring.datasource.url}"></property>
+		<property name="username" value="${spring.datasource.username}"></property>
+		<property name="password" value="${spring.datasource.password}"></property>
+		<property name="driverClassName"
+			value="${spring.datasource.driver-class-name}"></property>
+
+		<property name="minimumIdle" value="5"></property>
+		<property name="maximumPoolSize" value="20"></property>
+
+	</bean>
+
+	<bean id="dbcpDS" class="org.apache.commons.dbcp2.BasicDataSource" scope="singleton">
+
+		<property name="url"
+			value="${spring.datasource.url}"></property>
+		<property name="username" value="${spring.datasource.username}"></property>
+		<property name="password" value="${spring.datasource.password}"></property>
+		<property name="driverClassName" value="${spring.datasource.driver-class-name}"></property>
+		
+		<property name="minIdle" value="5"></property>
+			<property name="maxIdle" value="15"></property>
+
+	</bean>
+
+	<bean id="repo"
+		class="com.adp.repository.ComptesRepositoryImpl_JDBC">
+		<property name="dataSource" ref="hikariDS"></property>
+
+	</bean>
+	
+	<bean id="business" class="com.adp.business.ComptesBusinessImpl">
+	   <property name="repo" ref="repo"></property>
+	
+	</bean>
+
+	<bean id="client" class="com.adp.client.MyJDBCClient">
+		<property name="bo"  ref="business"></property>
+	</bean>
+
+</beans>

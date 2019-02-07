@@ -1,0 +1,5 @@
+2019-02-07 11:06:33.973  INFO 12012 --- [main] c.adp.MonProjet22AopLoggingApplication   : Starting MonProjet22AopLoggingApplication on acerromdhani with PID 12012 (started by Mohamed in D:\0\000 ADP Java QA\2019\my-workpace-spring\MonProjet-22-AOP-Logging)
+2019-02-07 11:06:33.973  INFO 12012 --- [main] c.adp.MonProjet22AopLoggingApplication   : No active profile set, falling back to default profiles: default
+2019-02-07 11:06:34.472  INFO 12012 --- [main] c.adp.MonProjet22AopLoggingApplication   : Started MonProjet22AopLoggingApplication in 0.844 seconds (JVM running for 1.591)
+2019-02-07 11:06:34.472 ERROR 12012 --- [main] com.adp.aspects.MyLoggingAspects         : >>>>> DEBUT    LOG by AOP >>>>>>>
+2019-02-07 11:06:34.472 ERROR 12012 --- [main] com.adp.aspects.MyLoggingAspects         : >>>>> FIN    LOG by AOP >>>>>>>

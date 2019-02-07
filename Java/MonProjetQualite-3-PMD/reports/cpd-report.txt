@@ -1,0 +1,27 @@
+Found a 10 line (31 tokens) duplication in the following files: 
+Starting at line 12 of D:\my-workspace-formation-java-adp\MonProjetQualite-3-PMD\src\main\java\com\adp\client\App.java
+Starting at line 29 of D:\my-workspace-formation-java-adp\MonProjetQualite-3-PMD\src\main\java\comadp\domain\Produit.java
+
+    }
+    public void doSomeThing() {
+    	int i = 0;
+    	while( i<= 10) {
+    		i++;
+    		System.out.println(i);
+    	}
+    }
+    
+}
+=====================================================================
+Found a 8 line (25 tokens) duplication in the following files: 
+Starting at line 25 of D:\my-workspace-formation-java-adp\MonProjetQualite-3-PMD\src\main\java\comadp\domain\Yang.java
+Starting at line 8 of D:\my-workspace-formation-java-adp\MonProjetQualite-3-PMD\src\main\java\comadp\domain\Ying.java
+
+		new Yang("Bad").start();
+	}
+
+	public String thisIsCutAndPaste(String pFirst, int pSecond) {
+		System.out.println("New world");
+		return "New world";
+	}
+}
